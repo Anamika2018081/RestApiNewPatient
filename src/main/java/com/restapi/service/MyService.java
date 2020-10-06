@@ -11,5 +11,5 @@ public interface MyService {
     //List<Patient> getByFnameAndLname(String name);
     Patient saveOrUpdate(Patient patient);
     //Optional<Patient> getByPid(String pid);
-
+    void delete(String id);
 }

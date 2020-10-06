@@ -11,10 +11,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 //import org.springframework.web.bind.annotation.GetMapping;
 //import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -54,6 +56,12 @@ public class MyController {
                 return null;
         }
     }*/
+     @RequestMapping("/patient/delete/{id}")
+    public String delete(@PathVariable String id){
+        myService.delete(id);
+        return "redirect:/patient/list/0";
+    }
+    
     @PostMapping("/patient")
     public ResponseEntity<Object> newPatient(@RequestBody Patient patient, Object Status){
                 String pattern = "^([A-Za-z0-9])*$";

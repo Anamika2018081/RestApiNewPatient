@@ -43,6 +43,11 @@ public class MyServiceImpl implements MyService {
         myRepository.save(patient);
         return patient;
     }
+
+      @Override
+    public void delete(String id) {
+        myRepository.deleteById(id);
+    }
 /*
     @Override
     public Optional<Patient> getByPid(String pid) {
